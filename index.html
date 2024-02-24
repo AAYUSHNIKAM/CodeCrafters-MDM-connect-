@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ether Transfer</title>
+</head>
+
+<style>
+	/* Global Styles */
+	body {
+	  background-color: rgb(255, 255, 129); /* Yellow themed background */
+	  margin: 0;
+	  padding: 0;
+	  font-family: Verdana, sans-serif;
+	  justify-content: center;
+	  align-items: center;
+	  width: 100%;
+	}
+
+	.container {
+	  max-width: 1200px;
+	  /* width: 90%; */
+
+	  margin: 0 auto;
+	  padding: 0 20px;
+	  justify-content: center;
+	  align-items: center;
+	  display: flex;
+	  /* flex-direction: column; */
+	}
+
+	/* .container img{
+		width: 90%x;
+	} */
+
+	img.name{
+	  padding: 0 20vh;
+	  width: 80vh;
+	}
+
+	/* Navigation Bar Styles */
+	.navbar {
+	  background-color: #ffc400; /* Yellow background for navbar */
+	  padding: 20px 0;
+	  justify-content: center;
+	  align-items: center;
+	  display: flex;
+	  flex-direction: column;
+	}
+
+	.navbar .logo {
+	  font-size: 24px;
+	  color: #333;
+	  float: left;
+	}
+
+	.navbar .nav-links {
+	  float: right;
+	  margin: 0;
+	  padding: 0;
+	  list-style: none;
+	  /* align-items: center;
+	  justify-content: center;
+	  display: flex;
+	  flex-direction: column; */
+	}
+
+	.navbar .nav-links li {
+	  display: inline;
+	  margin-left: 20px;
+	}
+
+	.navbar .nav-links li a {
+	  color: #333;
+	  text-decoration: none;
+	  /* margin-top: 20px; */
+	  font-size: 1.5rem;
+	}
+
+	.nav-links{
+	  background-color: #ff9100;
+	  /* width: 100%; */
+	}
+
+	img.logo{
+	  width: 15vh;
+	  height: 15vh;
+	}
+	/* Responsive Styles */
+	@media only screen and (max-width: 768px) {
+	  .navbar .logo {
+		float: none;
+		text-align: center;
+		margin-bottom: 10px;
+	  }
+
+	  .navbar .nav-links {
+		float: none;
+		text-align: center;
+	  }
+
+	  .navbar .nav-links li {
+		display: block;
+		margin: 0;
+	  }
+
+	  .navbar .nav-links li a {
+		display: block;
+		padding: 10px 0;
+	  }
+	}
+
+	/* Slideshow container */
+	.slideshow-container {
+	  max-width: 1000px;
+	  position: relative;
+	  margin: auto;
+	}
+
+	/* Caption text */
+	.text {
+	  color: #f2f2f2;
+	  font-size: 15px;
+	  padding: 8px 12px;
+	  position: absolute;
+	  bottom: 8px;
+	  width: 100%;
+	  text-align: center;
+	}
+
+	/* Number text (1/3 etc) */
+	.numbertext {
+	  color: #f2f2f2;
+	  font-size: 12px;
+	  padding: 8px 12px;
+	  position: absolute;
+	  top: 0;
+	}
+
+	/* The dots/bullets/indicators */
+	.dot {
+	  height: 15px;
+	  width: 15px;
+	  margin: 0 2px;
+	  background-color: #bbb;
+	  border-radius: 50%;
+	  display: inline-block;
+	  transition: background-color 0.6s ease;
+	}
+
+	.active {
+	  background-color: #717171;
+	}
+
+	/* Fading animation */
+	.fade {
+	  animation-name: fade;
+	  animation-duration: 1.5s;
+	}
+
+	.fade img {
+	  width: 100%;
+	  border: 6px solid black;
+	  border-radius: 20px;
+	  padding: 3vh;
+	  margin: 10vh 0;
+	}
+
+	@keyframes fade {
+	  from {
+		opacity: 0.4;
+	  }
+	  to {
+		opacity: 1;
+	  }
+	}
+
+	/* On smaller screens, decrease text size */
+	@media only screen and (max-width: 300px) {
+	  .text {
+		font-size: 11px;
+	  }
+	}
+
+
+	/* ****************** Section 1 ************************* */
+
+
+	section.first{
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  display: flex;
+	  /* flex-direction: column; */
+	}
+
+	.mySlides.fade{
+	  justify-content: center;
+	  align-items: center;
+	  display: flex;
+	  flex-direction: column;
+	  
+	  width: 90%;
+	}
+
+
+
+	/* *************** Section 2 ***********************/
+
+	section.second {
+    border: 4px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* filter: opacity(0.3); */
+    /* background-image: url(public/midd3.png); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    font-weight: 600;
+    color: #ff9100;
+    background-color: rgba(0, 0, 0, 0.6);
+    text-shadow: 2px 2px 2px white;
+    background: white;
+    border-radius: 20px;
+    margin: 50px;
+}
+
+	.labelform {
+	  display: flex;
+	  /* flex-direction: column; */
+	  /* justify-content: center; */
+	  /* align-items: center; */
+	  padding: 10px;
+	}
+
+	.addtransactions {
+	  width: 100%;
+	  background: #ffb85d;
+	  height: 6vh;
+	}
+
+	section.second h1 {
+	  font-size: 4.3rem;
+	  color: black;
+	  text-shadow: 2px 2px 2px white;
+	  right: 65vh;
+	  position: relative;
+	}
+
+	label {
+	  font-size: 1.1rem;
+	}
+
+	form {
+	  /* background-color: #ffc400; */
+	  /* opacity: 0.4; */
+	  right: 50vh;
+	  position: relative;
+	}
+
+	/* Styles for the table */
+	table {
+	  border-collapse: collapse;
+	  width: 100%;
+	  color: black;
+	}
+
+	thead th,
+	tbody td {
+	  border: 1px solid #000000; /* Gray border for each cell */
+	  padding: 8px;
+	}
+
+	thead th {
+	  background-color: wheat; /* Light gray background for table header */
+	}
+
+	tbody tr:nth-child(even) {
+	  background-color: #f2f2f2; /* Alternate row background color */
+	}
+
+	form#transferForm{
+		display: flex;
+		flex-direction: column;
+
+	}
+
+	input{
+		width: 60vh;
+		height: 5vh;
+	}
+	/* ************* END of Section2 ***************** */
+
+	/* *************************** Section 3 ****************************** */
+
+	section.third {
+	  height: 50vh;
+	  width: 100%;
+	  background-color: #fff0bd;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  flex-direction: column;
+	}
+
+	button.gotochat {
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  flex-direction: column;
+	  width: 100vh;
+	  height: 20vh;
+	  background-color: #ffb85d;
+	  color: black;
+	  font-size: 3rem;
+	  font-weight: 500;
+	}
+
+	/* ************************** END of Section 3 ****************************** */
+
+	/* *************************** Section  4 ****************************** */
+
+	section.fourth {
+	  /* height: 50vh; */
+	  width: 100%;
+	  background-color: #f8df8d;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  flex-direction: column;
+	}
+
+	h1.details{
+	  font-size: 4rem;
+	}
+
+	div.fourth {
+	  height: 100vh;
+	  width: 100%;
+	  background-color: #f8df8d;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  flex-direction: column;
+	}
+
+	div.pdfdetail{
+	  /* display: flex; */
+	  display: flex;
+	  flex-direction: column;
+	  justify-content: center;
+	  align-items: center;
+	}
+
+	div.alldetail{
+	  display: flex;
+	}
+
+	img.pdf{
+	  width: 40vh;
+	  padding: 10vh;
+	}
+
+	.detailimg{
+	  margin: 0 5vh;
+	  width: 55vh;
+	  height: 70vh;
+	}
+
+	div.endofit{
+	  font-size: 2rem;
+	  padding-top: 3vh;
+	  width: 80%;
+	}
+  
+	/* ************************** END of Section 4 ****************************** */
+
+
+	/* ************************** Section 5 ******************************* */
+
+	
+	
+section.five{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background-color: #fff9e7;
+}
+
+.alldocvideos{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.twodocvideos{
+display: flex;
+}
+
+.singledocvideos{
+width: 70%;
+/* margin: 10vh; */
+padding: 10vh;
+}
+
+video{
+width: 440px;
+height: 500px;
+margin: 15px;
+}
+
+p.video{
+width: 60vh;
+}
+
+div.docheading{
+font-size: 3rem;
+  font-weight: 900;
+  text-shadow: 4px 4px 4px wheat;
+  position: relative;
+  top: 7vh;
+}
+	/* ***************************** END of Section 5 ************************* */
+	/* Styles for the rest of your page content */
+	/* Your existing styles for the image slider and transactions section */
+
+
+	/* ************************ Section 6 ************************** */
+
+	section.sixth{
+	  height: 100vh;
+	  justify-content: center;
+	  align-items: center;
+	  display: flex;
+	  width: 100%;
+	  flex-direction: column;
+	}
+
+	.download-link {
+	  text-decoration: none;
+  }
+  .download-symbol {
+	  font-size: 20px;
+  }
+
+  table{
+	width: 80%;
+  }
+
+  h1.table{
+	font-size: 3rem;
+	text-shadow: 3px 3px 3px white;
+	color: #000000;
+  }
+
+	/* ************************* END of Section 6 *********************** */
+	footer {
+	  background-color: #ffc400;
+	  height: 8vh;
+	  justify-content: center;
+	  align-items: center;
+	  display: flex;
+	}
+  </style>
+
+<body>
+	<!-- Navigation Bar -->
+    <nav class="navbar">
+		<div class="container">
+		  <div class="logo"><img class="logo" src="public/logo.png" alt=""></div>
+		  <div class="name"><img class="name" src="public/name.png" alt=""></div>
+		  <div class="logo"><img class="logo" src="public/logo.png" alt=""></div>
+  
+		  <ul class="nav-links">
+			<!-- <li><a href="#section1">Home</a></li>
+			<li><a href="#section2">Transactions</a></li> -->
+		  </ul>
+		</div>
+	  </nav>
+
+
+	<section id="section1" class="first">
+		<div class="ambel"><img src="public/ambelbg.png" alt=""></div>
+		<div class="slideshow-container">
+		  <div class="mySlides fade">
+			<div class="numbertext">1 / 3</div>
+			<img src="public/mid1.jpg" style="width: 100%" />
+			<div class="text"></div>
+		  </div>
+  
+		  <div class="mySlides fade">
+			<div class="numbertext">2 / 3</div>
+			<img src="public/mid2.avif" style="width: 100%" />
+			<div class="text"></div>
+		  </div>
+  
+		  <div class="mySlides fade">
+			<div class="numbertext">3 / 3</div>
+			<img src="public/mid3.jpg" style="width: 100%" />
+			<div class="text"></div>
+		  </div>
+		  <br />
+  
+		  <div style="text-align: center">
+			<span class="dot"></span>
+			<span class="dot"></span>
+			<span class="dot"></span>
+		  </div>
+		</div>
+		<div class="ambel"><img src="public/ambelbg.png" alt=""></div>
+	  </section>
+
+	<!-- <h1>Ether Transfer</h1> -->
+	<section class="second">
+		<form id="transferForm">
+			<label for="contractAddress">Sender Address:</label>
+			<input type="text" id="contractAddress" name="contractAddress"><br><br>
+			<label for="receiver">Receiver Address:</label>
+			<input type="text" id="receiver" name="receiver"><br><br>
+			<label for="amount">Amount (Ether):</label>
+			<input type="number" id="amount" name="amount" step="0.0001"><br><br>
+			<label for="message">Message:</label>
+			<input type="text" id="message" name="message"><br><br>
+			<button type="submit">Transfer Ether</button>
+		</form>
+		<div id="transferResult"></div>
+	
+		<br>
+		<h2>Transaction History</h2>
+		<table id="transactionTable">
+			<thead>
+				<tr>
+					<th>Sender</th>
+					<th>Receiver</th>
+					<th>Amount (Ether)</th>
+					<th>Amount (Rupees)</th>
+					<th>Message</th>
+				</tr>
+			</thead>
+			<tbody id="transactionHistory">
+			</tbody>
+		</table>
+	
+	</section>
+
+	<!-- *************************************** Section 3 ************************************ -->
+
+    <section class="third">
+		<a href="memechat/index.html" class="gotochat"
+		  ><button class="gotochat">Go to community chatroom</button></a
+		>
+	  </section>
+  
+	  <!-- ************************************ END of Section 3 *********************************** -->
+  
+	  <!-- *************************************** Section 4 ************************************ -->
+  
+  
+	  <section class="fourth">
+		<div class="fourth">
+		  <h1 class="details">Details about the weekly meal schedule</h1>
+		  <div class="alldetail">
+	
+			<img class="detailimg" src="public/detail2.png" alt="" />
+		  <img class="detailimg" src="public/detail.jpg" alt="" />
+		  <img class="detailimg" src="public/detail3.jpg" alt="" />
+		
+		  <!-- <div class="pdfdetail">
+			<a class="pdf1" href="public/pdf1.pdf download">
+			<img class="pdf" src="public/pdf2.png" alt=""></a>
+			<a class="pdf2" href="public/pdf2.pdf download">
+			<img class="pdf" src="public/pdf2.png" alt=""></a>
+		  </div> -->
+		</div>
+		</div>
+	  </section>
+  
+  
+	  <section class="fourth">
+		<div class="fourth" >
+		  <!-- <h1 class="details">Details about the weekly meal schedule</h1> -->
+		  <div class="alldetail">
+			<img class="detailimg" src="public/detail4.webp" alt="" />
+		  <img class="detailimg" src="public/detail5.jpeg" alt="" />
+		  <img class="detailimg" src="public/detail6.jpeg" alt="" />
+		  <!-- <div class="pdfdetail">
+			<a class="pdf1" href="public/pdf1.pdf download">
+			<img class="pdf" src="public/pdf2.png" alt=""></a>
+			<a class="pdf2" href="public/pdf2.pdf download">
+			<img class="pdf" src="public/pdf2.png" alt=""></a>
+		  </div> -->
+		  
+		</div>
+		<div class="endofit">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis tempore debitis, ex nobis aperiam tenetur doloribus magnam laudantium officia, odit iusto sint facilis!</div>
+		</div>
+	  </section>
+  
+	  <!-- ************************************ END of Section 4 *********************************** -->
+  
+  
+  
+	  <!-- ****************************** Section 5 ***************************** -->
+  
+	  <section class="five">
+  
+		<div class="docheading">
+			<From class="experts">Know More From Our experts</p>
+		</div>
+	  <div class="alldocvideos">
+		<div class="twodocvideos">
+			<div class="singledocvideo"><video src="public/video1.mp4" controls="controls"></video><p class="video">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam hic id earum beatae quia quo totam aut quae, nisi dolorum!</p></div>
+			<div class="singledocvideo"><video src="public/video1.mp4" controls="controls"></video><p class="video">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus cumque totam, ratione voluptatibus accusamus odio sapiente</p></div>
+			<div class="singledocvideo"><video src="public/video1.mp4" controls="controls"></video><p class="video">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus cumque totam, ratione voluptatibus accusamus odio sapiente</p></div>
+		</div>
+		<div class="twodocvideos">
+			<div class="singledocvideo"><video src="public/video1.mp4" controls="controls"></video><p class="video">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam magni alias maiores nesciunt minima consequuntur cum r</p></div>
+			<div class="singledocvideo"><video src="public/video1.mp4" controls="controls"></video><p class="video">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto optio odio repudiandae rem. Eaque dicta sint beatae n</p></div>
+			<div class="singledocvideo"><video src="public/video1.mp4" controls="controls"></video><p class="video">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto optio odio repudiandae rem. Eaque dicta sint beatae n</p></div>
+		</div>
+	  </div>
+  
+	  </section>
+  
+  
+	  <!-- **************************** END of Section 5 ************************ -->
+  
+  
+	  <!-- ***************************** Section 6 ******************************* -->
+  
+	  <section class="sixth">
+  
+		<h1 class="table">
+		  Download important Pdf related to the mid-day meal scheme
+		</h1>
+		<table class="sixth">
+  
+  
+		  <tr>
+			  <th>PDF Name</th>
+			  <th>Download</th>
+		  </tr>
+		  <tr>
+			  <td>Document 1</td>
+			  <td><a class="download-link" href="path_to_document_1.pdf" download><span class="download-symbol">&#x2B07;</span></a></td>
+		  </tr>
+		  <tr>
+			  <td>Document 2</td>
+			  <td><a class="download-link" href="path_to_document_2.pdf" download><span class="download-symbol">&#x2B07;</span></a></td>
+		  </tr>
+		  <tr>
+			  <td>Document 3</td>
+			  <td><a class="download-link" href="path_to_document_3.pdf" download><span class="download-symbol">&#x2B07;</span></a></td>
+		  </tr>
+		  <tr>
+			  <td>Document 4</td>
+			  <td><a class="download-link" href="path_to_document_4.pdf" download><span class="download-symbol">&#x2B07;</span></a></td>
+		  </tr>
+		  <tr>
+			  <td>Document 5</td>
+			  <td><a class="download-link" href="path_to_document_5.pdf" download><span class="download-symbol">&#x2B07;</span></a></td>
+		  </tr>
+		  <tr>
+			  <td>Document 6</td>
+			  <td><a class="download-link" href="path_to_document_6.pdf" download><span class="download-symbol">&#x2B07;</span></a></td>
+		  </tr>
+	  </table>
+	  </section>
+  
+	  <!-- **************************** END of Section 6 ************************** -->
+	  <!-- Footer Section -->
+	  <footer>
+		<div class="container">
+		  <p>&copy; made by team Code-Crafters</p>
+		</div>
+	  </footer>
+
+	<script src="https://cdn.jsdelivr.net/npm/web3@1.5.3/dist/web3.min.js"></script>
+	<script>
+		window.addEventListener('load', async () => {
+			if (window.ethereum) {
+				window.web3 = new Web3(window.ethereum);
+				await window.ethereum.enable();
+			} else if (window.web3) {
+				window.web3 = new Web3(window.web3.currentProvider);
+			} else {
+				console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
+			}
+
+			// Load transaction history from localStorage
+			const savedTransactions = JSON.parse(localStorage.getItem('transactions')) || [];
+			const transactionHistory = document.getElementById('transactionHistory');
+			savedTransactions.forEach(transaction => {
+				const newRow = transactionHistory.insertRow();
+				newRow.insertCell(0).textContent = transaction.sender;
+				newRow.insertCell(1).textContent = transaction.receiver;
+				newRow.insertCell(2).textContent = transaction.amount;
+				newRow.insertCell(3).textContent = transaction.amountInRupees;
+				newRow.insertCell(4).textContent = transaction.message;
+			});
+		});
+
+		document.getElementById('transferForm').addEventListener('submit', async (event) => {
+			event.preventDefault();
+
+			const contractAddress = document.getElementById('contractAddress').value;; // Add your contract address here
+			const receiver = document.getElementById('receiver').value;
+			const amount = document.getElementById('amount').value;
+			const message = document.getElementById('message').value;
+
+			const contractABI = [
+				{
+					"anonymous": false,
+					"inputs": [
+						{
+							"indexed": false,
+							"internalType": "address",
+							"name": "from",
+							"type": "address"
+						},
+						{
+							"indexed": false,
+							"internalType": "address",
+							"name": "to",
+							"type": "address"
+						},
+						{
+							"indexed": false,
+							"internalType": "uint256",
+							"name": "amount",
+							"type": "uint256"
+						},
+						{
+							"indexed": false,
+							"internalType": "string",
+							"name": "message",
+							"type": "string"
+						}
+					],
+					"name": "Sent",
+					"type": "event"
+				},
+				{
+					"inputs": [
+						{
+							"internalType": "address payable",
+							"name": "_receiver",
+							"type": "address"
+						},
+						{
+							"internalType": "string",
+							"name": "_message",
+							"type": "string"
+						}
+					],
+					"name": "transferEther",
+					"outputs": [],
+					"stateMutability": "payable",
+					"type": "function"
+				}
+			]; // Replace with your contract ABI
+
+			const contract = new window.web3.eth.Contract(contractABI, contractAddress);
+
+			try {
+				const accounts = await window.web3.eth.getAccounts();
+				const sender = accounts[0];
+
+				await contract.methods.transferEther(receiver, message).send({
+					from: sender,
+					value: window.web3.utils.toWei(amount, 'ether')
+				});
+
+				document.getElementById('transferResult').innerText = 'Ether successfully sent!';
+
+				// Update transaction history table
+				const transactionHistory = document.getElementById('transactionHistory');
+				const newRow = transactionHistory.insertRow();
+				newRow.insertCell(0).textContent = contractAddress; // Display contract address instead of sender
+				newRow.insertCell(1).textContent = receiver;
+				newRow.insertCell(2).textContent = amount;
+				const amountInRupeesCell = newRow.insertCell(3);
+				const amountInRupees = amount * 50000; // Assuming 1 Ether = 50000 Rupees
+				amountInRupeesCell.textContent = amountInRupees;
+				newRow.insertCell(4).textContent = message;
+
+				// Save transaction to localStorage
+				const savedTransactions = JSON.parse(localStorage.getItem('transactions')) || [];
+				savedTransactions.push({
+					sender: contractAddress,
+					receiver: receiver,
+					amount: amount,
+					amountInRupees: amountInRupees,
+					message: message
+				});
+				localStorage.setItem('transactions', JSON.stringify(savedTransactions));
+
+			} catch (error) {
+				console.error('Error:', error);
+				document.getElementById('transferResult').innerText = 'Error: ' + error.message;
+			}
+		});
+
+	</script>
+
+	<script src="script.js"></script>
+</body>
+
+
+
+</html>
