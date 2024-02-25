@@ -10,117 +10,128 @@
 <style>
 	/* Global Styles */
 	body {
-	  background-color: rgb(255, 255, 129); /* Yellow themed background */
-	  margin: 0;
-	  padding: 0;
-	  font-family: Verdana, sans-serif;
-	  justify-content: center;
-	  align-items: center;
-	  width: 100%;
+		background-color: #ffde59;
+		/* Yellow themed background */
+		margin: 0;
+		padding: 0;
+		font-family: Verdana, sans-serif;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
 	}
 
 	.container {
-	  max-width: 1200px;
-	  /* width: 90%; */
+		max-width: 1200px;
+		/* width: 90%; */
 
-	  margin: 0 auto;
-	  padding: 0 20px;
-	  justify-content: center;
-	  align-items: center;
-	  display: flex;
-	  /* flex-direction: column; */
+		margin: 0 auto;
+		padding: 0 20px;
+		justify-content: center;
+		align-items: center;
+		display: flex;
+		/* flex-direction: column; */
 	}
 
 	/* .container img{
 		width: 90%x;
 	} */
 
-	img.name{
-	  padding: 0 20vh;
-	  width: 80vh;
+	img.name {
+		margin: 0 10vh;
+		border-radius: 20px;
+		border: 4px solid black;
+		width: 80vh;
+
 	}
 
 	/* Navigation Bar Styles */
 	.navbar {
-	  background-color: #ffc400; /* Yellow background for navbar */
-	  padding: 20px 0;
-	  justify-content: center;
-	  align-items: center;
-	  display: flex;
-	  flex-direction: column;
+		height: 30vh;
+		background-color: #ffde59;
+		/* Yellow background for navbar  #ffc400*/
+		padding: 20px 0;
+		justify-content: center;
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		border-top: 4px solid black;
+		border-bottom: 4px solid black;
 	}
 
 	.navbar .logo {
-	  font-size: 24px;
-	  color: #333;
-	  float: left;
+		font-size: 24px;
+		color: #333;
+		float: left;
+		padding: 0 4vh;
 	}
 
 	.navbar .nav-links {
-	  float: right;
-	  margin: 0;
-	  padding: 0;
-	  list-style: none;
-	  /* align-items: center;
+		float: right;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		/* align-items: center;
 	  justify-content: center;
 	  display: flex;
 	  flex-direction: column; */
 	}
 
 	.navbar .nav-links li {
-	  display: inline;
-	  margin-left: 20px;
+		display: inline;
+		margin-left: 20px;
 	}
 
 	.navbar .nav-links li a {
-	  color: #333;
-	  text-decoration: none;
-	  /* margin-top: 20px; */
-	  font-size: 1.5rem;
+		color: #333;
+		text-decoration: none;
+		/* margin-top: 20px; */
+		font-size: 1.5rem;
 	}
 
-	.nav-links{
-	  background-color: #ff9100;
-	  /* width: 100%; */
+	.nav-links {
+		background-color: #ff9100;
+		/* width: 100%; */
 	}
 
-	img.logo{
-	  width: 15vh;
-	  height: 15vh;
+	img.logo {
+		width: 15vh;
+		height: 15vh;
+
 	}
+
 	/* Responsive Styles */
 	@media only screen and (max-width: 768px) {
-	  .navbar .logo {
-		float: none;
-		text-align: center;
-		margin-bottom: 10px;
-	  }
+		.navbar .logo {
+			float: none;
+			text-align: center;
+			margin-bottom: 10px;
+		}
 
-	  .navbar .nav-links {
-		float: none;
-		text-align: center;
-	  }
+		.navbar .nav-links {
+			float: none;
+			text-align: center;
+		}
 
-	  .navbar .nav-links li {
-		display: block;
-		margin: 0;
-	  }
+		.navbar .nav-links li {
+			display: block;
+			margin: 0;
+		}
 
-	  .navbar .nav-links li a {
-		display: block;
-		padding: 10px 0;
-	  }
+		.navbar .nav-links li a {
+			display: block;
+			padding: 10px 0;
+		}
 	}
 
 	/* Slideshow container */
-	.slideshow-container {
-	  max-width: 1000px;
-	  position: relative;
-	  margin: auto;
-	}
+	/* .slideshow-container { */
+	/* max-width: 1000px; */
+	/* position: relative; */
+	/* margin: auto; */
+	/* } */
 
 	/* Caption text */
-	.text {
+	/* .text {
 	  color: #f2f2f2;
 	  font-size: 15px;
 	  padding: 8px 12px;
@@ -128,304 +139,373 @@
 	  bottom: 8px;
 	  width: 100%;
 	  text-align: center;
-	}
+	} */
 
 	/* Number text (1/3 etc) */
-	.numbertext {
+	/* .numbertext {
 	  color: #f2f2f2;
 	  font-size: 12px;
 	  padding: 8px 12px;
 	  position: absolute;
 	  top: 0;
-	}
+	} */
 
 	/* The dots/bullets/indicators */
 	.dot {
-	  height: 15px;
-	  width: 15px;
-	  margin: 0 2px;
-	  background-color: #bbb;
-	  border-radius: 50%;
-	  display: inline-block;
-	  transition: background-color 0.6s ease;
+		height: 15px;
+		width: 15px;
+		margin: 0 2px;
+		background-color: #bbb;
+		border-radius: 50%;
+		display: inline-block;
+		transition: background-color 0.6s ease;
 	}
 
 	.active {
-	  background-color: #717171;
+		background-color: #717171;
 	}
 
 	/* Fading animation */
 	.fade {
-	  animation-name: fade;
-	  animation-duration: 1.5s;
+		animation-name: fade;
+		animation-duration: 1.5s;
 	}
 
 	.fade img {
-	  width: 100%;
-	  border: 6px solid black;
-	  border-radius: 20px;
-	  padding: 3vh;
-	  margin: 10vh 0;
+		width: 100%;
+		/* border: 6px solid black;
+	  border-radius: 20px; */
+		padding: 3vh;
+		/* margin: 10vh 0;x */
+		width: 500vh;
 	}
 
 	@keyframes fade {
-	  from {
-		opacity: 0.4;
-	  }
-	  to {
-		opacity: 1;
-	  }
+		from {
+			opacity: 0.4;
+		}
+
+		to {
+			opacity: 1;
+		}
 	}
 
 	/* On smaller screens, decrease text size */
 	@media only screen and (max-width: 300px) {
-	  .text {
-		font-size: 11px;
-	  }
+		.text {
+			font-size: 11px;
+		}
 	}
 
 
 	/* ****************** Section 1 ************************* */
 
 
-	section.first{
-	  display: flex;
+	section.first {
+		/* display: flex;
 	  justify-content: center;
 	  align-items: center;
-	  display: flex;
-	  /* flex-direction: column; */
+	  display: flex; */
+		/* flex-direction: column; */
+		padding: 0;
+		margin: 0;
 	}
 
-	.mySlides.fade{
-	  justify-content: center;
+	.mySlides.fade {
+		/* justify-content: center;
 	  align-items: center;
 	  display: flex;
 	  flex-direction: column;
-	  
-	  width: 90%;
+	   */
+		/* width: 90%; */
+		display: block;
 	}
 
 
+	img.slides {
+		/* width: 500px; */
+	}
 
 	/* *************** Section 2 ***********************/
 
 	section.second {
-    border: 4px solid black;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* filter: opacity(0.3); */
-    /* background-image: url(public/midd3.png); */
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    font-weight: 600;
-    color: #ff9100;
-    background-color: rgba(0, 0, 0, 0.6);
-    text-shadow: 2px 2px 2px white;
-    background: white;
-    border-radius: 20px;
-    margin: 50px;
-}
+		border: 4px solid black;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		/* filter: opacity(0.3); */
+		background-image: url(public/form.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		/* height: 170vh; */
+		font-weight: 600;
+		color: #ff9100;
+		background-color: rgba(0, 0, 0, 0.6);
+		text-shadow: 2px 2px 2px white;
+		background: white;
+		border-radius: 20px;
+		margin: 50px;
+	}
 
 	.labelform {
-	  display: flex;
-	  /* flex-direction: column; */
-	  /* justify-content: center; */
-	  /* align-items: center; */
-	  padding: 10px;
+		display: flex;
+		/* flex-direction: column; */
+		/* justify-content: center; */
+		/* align-items: center; */
+		padding: 10px;
 	}
 
 	.addtransactions {
-	  width: 100%;
-	  background: #ffb85d;
-	  height: 6vh;
+		width: 100%;
+		background: #ffb85d;
+		height: 6vh;
 	}
 
 	section.second h1 {
-	  font-size: 4.3rem;
-	  color: black;
-	  text-shadow: 2px 2px 2px white;
-	  right: 65vh;
-	  position: relative;
+		font-size: 4.3rem;
+		color: black;
+		text-shadow: 2px 2px 2px white;
+		/* right: 65vh; */
+		position: relative;
 	}
 
 	label {
-	  font-size: 1.1rem;
+		font-size: 1.1rem;
+		color: #000000;
 	}
 
 	form {
-	  /* background-color: #ffc400; */
-	  /* opacity: 0.4; */
-	  right: 50vh;
-	  position: relative;
+		/* background-color: #ffc400; */
+		/* opacity: 0.4; */
+		/* right: 50vh; */
+		position: relative;
 	}
 
 	/* Styles for the table */
 	table {
-	  border-collapse: collapse;
-	  width: 100%;
-	  color: black;
+		border-collapse: collapse;
+		width: 100%;
+		color: black;
+		margin: 2vh;
+		margin-bottom: 10vh;
+		border: 2px solid black;
 	}
 
 	thead th,
 	tbody td {
-	  border: 1px solid #000000; /* Gray border for each cell */
-	  padding: 8px;
+		border: 1px solid #000000;
+		/* Gray border for each cell */
+		padding: 8px;
 	}
 
 	thead th {
-	  background-color: wheat; /* Light gray background for table header */
+		background-color: wheat;
+		/* Light gray background for table header */
 	}
 
 	tbody tr:nth-child(even) {
-	  background-color: #f2f2f2; /* Alternate row background color */
+		background-color: #f2f2f2;
+		/* Alternate row background color */
 	}
 
-	form#transferForm{
+	form#transferForm {
 		display: flex;
 		flex-direction: column;
-
+		background: #d9d9d9;
+		padding: 60px;
+		border-bottom-left-radius: 100px;
+		border-bottom-right-radius: 100px;
+		margin: 2vh;
 	}
 
-	input{
+	section.second h2{
+		color: #000000;
+		font-size: 3rem;
+	}
+	div.transfer {
+		justify-content: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+
+	button.transfer {
+		width: 20vh;
+		height: 4vh;
+		background: #ffde59;
+		border-radius: 7px;
+	}
+
+	input {
 		width: 60vh;
+		border: 2px solid black;
 		height: 5vh;
 	}
+
+	div.fromplusimg {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	img.form {
+    width: 35%;
+    box-shadow: 8px 10px 20px black;
+    margin: 0 60px;
+}
+
 	/* ************* END of Section2 ***************** */
 
 	/* *************************** Section 3 ****************************** */
 
 	section.third {
-	  height: 50vh;
-	  width: 100%;
-	  background-color: #fff0bd;
-	  display: flex;
-	  justify-content: center;
-	  align-items: center;
-	  flex-direction: column;
+		height: 50vh;
+		width: 100%;
+		background-color: #ffde59;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
 	}
 
 	button.gotochat {
-	  display: flex;
-	  justify-content: center;
-	  align-items: center;
-	  flex-direction: column;
-	  width: 100vh;
-	  height: 20vh;
-	  background-color: #ffb85d;
-	  color: black;
-	  font-size: 3rem;
-	  font-weight: 500;
-	}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vh;
+    height: 20vh;
+    background-color: #ffb85d;
+    color: black;
+    font-size: 3rem;
+    font-weight: 500;
+    border: 4px solid black;
+    border-radius: 30px;
+    background: white;
+    text-decoration: none;
+    list-style: none;
+	cursor: pointer;
+}
+
+a.gotochat{
+	text-decoration: none;
+	list-style: none;
+	cursor: pointer;
+}
 
 	/* ************************** END of Section 3 ****************************** */
 
 	/* *************************** Section  4 ****************************** */
 
 	section.fourth {
-	  /* height: 50vh; */
-	  width: 100%;
-	  background-color: #f8df8d;
-	  display: flex;
-	  justify-content: center;
-	  align-items: center;
-	  flex-direction: column;
+		/* height: 50vh; */
+		width: 100%;
+		background-color: #f8df8d;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
 	}
 
-	h1.details{
-	  font-size: 4rem;
+	h1.details {
+		font-size: 4rem;
 	}
 
 	div.fourth {
-	  height: 100vh;
-	  width: 100%;
-	  background-color: #f8df8d;
-	  display: flex;
-	  justify-content: center;
-	  align-items: center;
-	  flex-direction: column;
+		height: 100vh;
+		width: 100%;
+		background-color: #fff0c1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
 	}
 
-	div.pdfdetail{
-	  /* display: flex; */
-	  display: flex;
-	  flex-direction: column;
-	  justify-content: center;
-	  align-items: center;
+	div.pdfdetail {
+		/* display: flex; */
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 	}
 
-	div.alldetail{
-	  display: flex;
+	div.alldetail {
+		display: flex;
 	}
 
-	img.pdf{
-	  width: 40vh;
-	  padding: 10vh;
+	img.pdf {
+		width: 40vh;
+		padding: 10vh;
 	}
 
-	.detailimg{
-	  margin: 0 5vh;
-	  width: 55vh;
-	  height: 70vh;
+	.detailimg {
+		margin: 0 5vh;
+		width: 55vh;
+		height: 70vh;
+		border: 2px solid black;
 	}
 
-	div.endofit{
-	  font-size: 2rem;
-	  padding-top: 3vh;
-	  width: 80%;
+	div.endofit {
+		font-size: 2rem;
+		padding-top: 3vh;
+		width: 80%;
 	}
-  
+
 	/* ************************** END of Section 4 ****************************** */
 
 
 	/* ************************** Section 5 ******************************* */
 
-	
-	
-section.five{
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-background-color: #fff9e7;
-}
 
-.alldocvideos{
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-}
 
-.twodocvideos{
-display: flex;
-}
+	section.five {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background-color: #fff9e7;
+	}
 
-.singledocvideos{
-width: 70%;
-/* margin: 10vh; */
-padding: 10vh;
-}
+	.alldocvideos {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
 
-video{
-width: 440px;
-height: 500px;
-margin: 15px;
-}
+	.twodocvideos {
+		display: flex;
+	}
 
-p.video{
-width: 60vh;
-}
+	.singledocvideos {
+		width: 70%;
+		/* margin: 10vh; */
+		padding: 10vh;
+	}
 
-div.docheading{
-font-size: 3rem;
-  font-weight: 900;
-  text-shadow: 4px 4px 4px wheat;
-  position: relative;
-  top: 7vh;
-}
+	video {
+		width: 440px;
+		height: 500px;
+		margin: 15px;
+		border-radius: 25px;
+    border: 2px solid;
+	}
+
+	p.video {
+		width: 60vh;
+
+	}
+
+	div.docheading {
+		font-size: 3rem;
+		font-weight: 900;
+		text-shadow: 4px 4px 4px wheat;
+		position: relative;
+		top: 7vh;
+	}
+
 	/* ***************************** END of Section 5 ************************* */
 	/* Styles for the rest of your page content */
 	/* Your existing styles for the image slider and transactions section */
@@ -433,76 +513,180 @@ font-size: 3rem;
 
 	/* ************************ Section 6 ************************** */
 
-	section.sixth{
-	  height: 100vh;
-	  justify-content: center;
-	  align-items: center;
-	  display: flex;
-	  width: 100%;
-	  flex-direction: column;
+	section.sixth {
+		height: 100vh;
+		justify-content: center;
+		align-items: center;
+		display: flex;
+		width: 100%;
+		flex-direction: column;
+		background: #f5f5d6;
 	}
 
 	.download-link {
-	  text-decoration: none;
-  }
-  .download-symbol {
-	  font-size: 20px;
-  }
+		text-decoration: none;
+	}
 
-  table{
-	width: 80%;
-  }
+	.download-symbol {
+		font-size: 20px;
+	}
 
-  h1.table{
-	font-size: 3rem;
-	text-shadow: 3px 3px 3px white;
-	color: #000000;
-  }
+	table {
+		width: 80%;
+	}
+
+	h1.table {
+		font-size: 3rem;
+		text-shadow: 3px 3px 3px white;
+		color: #000000;
+		width: 69%;
+	}
 
 	/* ************************* END of Section 6 *********************** */
 	footer {
-	  background-color: #ffc400;
-	  height: 8vh;
-	  justify-content: center;
-	  align-items: center;
-	  display: flex;
+		background-color: #ffc400;
+		height: 8vh;
+		justify-content: center;
+		align-items: center;
+		display: flex;
 	}
-  </style>
+
+	div.ambel img {
+		width: 170%;
+		margin: 5vh;
+	}
+
+	div.ambel {
+		width: 170%;
+		margin: 5vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	/* Asach kela */
+
+	/* Fullscreen image */
+	.slides {
+		width: 100%;
+		height: 100vh;
+		/* Adjust as needed */
+		object-fit: cover;
+	}
+
+	/* Hide all slides by default */
+	.mySlides {
+		display: none;
+	}
+
+	/* Navigation dots style */
+	.dot {
+		height: 15px;
+		width: 15px;
+		/* margin: 0 2px; */
+		background-color: #bbb;
+		border-radius: 50%;
+		display: inline-block;
+		transition: background-color 0.6s ease;
+	}
+
+	/* Active dot */
+	.active {
+		background-color: #717171;
+	}
+
+	.fade {
+		animation-name: fade;
+		animation-duration: 1.5s;
+		/* Remove padding and margin */
+		padding: 0;
+		margin: 0;
+	}
+
+	.fade img.slides {
+		/* Adjust width and height to cover the entire screen */
+		width: 100vw;
+		height: 100vh;
+		object-fit: cover;
+		/* Ensure the image covers the entire space */
+	}
+
+	.fade img.slides {
+		width: 99vw;
+		height: 100vh;
+		object-fit: cover;
+		margin: 0;
+		padding: 0;
+	}
+</style>
 
 <body>
 	<!-- Navigation Bar -->
-    <nav class="navbar">
+	<nav class="navbar">
 		<div class="container">
-		  <div class="logo"><img class="logo" src="public/logo.png" alt=""></div>
-		  <div class="name"><img class="name" src="public/name.png" alt=""></div>
-		  <div class="logo"><img class="logo" src="public/logo.png" alt=""></div>
-  
-		  <ul class="nav-links">
-			<!-- <li><a href="#section1">Home</a></li>
+
+			<div class="ambel"><img src="public/ambelbg.png" alt=""></div>
+
+			<div class="logo"><img class="logo" src="public/logo.png" alt=""></div>
+			<div class="name"><img class="name" src="public/name.png" alt=""></div>
+			<div class="logo"><img class="logo" src="public/logo.png" alt=""></div>
+
+			<div class="ambel"><img src="public/ambelbg.png" alt=""></div>
+
+			<ul class="nav-links">
+				<!-- <li><a href="#section1">Home</a></li>
 			<li><a href="#section2">Transactions</a></li> -->
-		  </ul>
+			</ul>
 		</div>
-	  </nav>
+	</nav>
 
 
 	<section id="section1" class="first">
+		<div class="slideshow-container">
+			<div class="mySlides fade">
+				<img class="slides" src="public/mid1.jpg" />
+				<div class="text"></div>
+			</div>
+
+			<div class="mySlides fade">
+				<img class="slides" src="public/mid2.avif" />
+				<div class="text"></div>
+			</div>
+
+			<div class="mySlides fade">
+				<img class="slides" src="public/mid3.jpg" />
+				<div class="text"></div>
+			</div>
+			<br />
+
+			<div style="text-align: center">
+				<span class="dot"></span>
+				<span class="dot"></span>
+				<span class="dot"></span>
+			</div>
+		</div>
+	</section>
+
+
+	<!-- <section id="section1" class="first">
 		<div class="ambel"><img src="public/ambelbg.png" alt=""></div>
 		<div class="slideshow-container">
 		  <div class="mySlides fade">
 			<div class="numbertext">1 / 3</div>
-			<img src="public/mid1.jpg" style="width: 100%" />
+			<img class="slides" src="public/mid1.jpg" style="width: 100%" />
 			<div class="text"></div>
 		  </div>
   
 		  <div class="mySlides fade">
 			<div class="numbertext">2 / 3</div>
-			<img src="public/mid2.avif" style="width: 100%" />
+			<img class="slides" src="public/mid2.avif" style="width: 100%" />
 			<div class="text"></div>
 		  </div>
   
 		  <div class="mySlides fade">
 			<div class="numbertext">3 / 3</div>
-			<img src="public/mid3.jpg" style="width: 100%" />
+			<img class="slides" src="public/mid3.jpg" style="width: 100%" />
 			<div class="text"></div>
 		  </div>
 		  <br />
@@ -514,23 +698,28 @@ font-size: 3rem;
 		  </div>
 		</div>
 		<div class="ambel"><img src="public/ambelbg.png" alt=""></div>
-	  </section>
+	  </section> -->
 
 	<!-- <h1>Ether Transfer</h1> -->
 	<section class="second">
-		<form id="transferForm">
-			<label for="contractAddress">Sender Address:</label>
-			<input type="text" id="contractAddress" name="contractAddress"><br><br>
-			<label for="receiver">Receiver Address:</label>
-			<input type="text" id="receiver" name="receiver"><br><br>
-			<label for="amount">Amount (Ether):</label>
-			<input type="number" id="amount" name="amount" step="0.0001"><br><br>
-			<label for="message">Message:</label>
-			<input type="text" id="message" name="message"><br><br>
-			<button type="submit">Transfer Ether</button>
-		</form>
+		<!-- <div class="all"> -->
+		<h1>Transaction</h1>
+		<div class="fromplusimg">
+			<form id="transferForm">
+				<label for="contractAddress">Sender Address:</label>
+				<input type="text" id="contractAddress" name="contractAddress"><br><br>
+				<label for="receiver">Receiver Address:</label>
+				<input type="text" id="receiver" name="receiver"><br><br>
+				<label for="amount">Amount (Ether):</label>
+				<input type="number" id="amount" name="amount" step="0.0001"><br><br>
+				<label for="message">Message:</label>
+				<input type="text" id="message" name="message"><br><br>
+				<div class="transfer"><button class="transfer" type="submit">Transfer Ether</button></div>
+			</form>
+			<img class="form" src="public/form.jpg" alt="">
+		</div>
 		<div id="transferResult"></div>
-	
+
 		<br>
 		<h2>Transaction History</h2>
 		<table id="transactionTable">
@@ -551,134 +740,157 @@ font-size: 3rem;
 
 	<!-- *************************************** Section 3 ************************************ -->
 
-    <section class="third">
-		<a href="memechat/index.html" class="gotochat"
-		  ><button class="gotochat">Go to community chatroom</button></a
-		>
-	  </section>
-  
-	  <!-- ************************************ END of Section 3 *********************************** -->
-  
-	  <!-- *************************************** Section 4 ************************************ -->
-  
-  
-	  <section class="fourth">
+	<section class="third">
+		<a href="memechat/index.html" class="gotochat"><button class="gotochat">Go to community chatroom</button></a>
+	</section>
+
+	<!-- ************************************ END of Section 3 *********************************** -->
+
+	<!-- *************************************** Section 4 ************************************ -->
+
+
+	<section class="fourth">
 		<div class="fourth">
-		  <h1 class="details">Details about the weekly meal schedule</h1>
-		  <div class="alldetail">
-	
-			<img class="detailimg" src="public/detail2.png" alt="" />
-		  <img class="detailimg" src="public/detail.jpg" alt="" />
-		  <img class="detailimg" src="public/detail3.jpg" alt="" />
-		
-		  <!-- <div class="pdfdetail">
+			<h1 class="details">Details about the weekly meal schedule</h1>
+			<div class="alldetail">
+
+				<img class="detailimg" src="public/detail2.png" alt="" />
+				<img class="detailimg" src="public/detail.jpg" alt="" />
+				<img class="detailimg" src="public/detail3.jpg" alt="" />
+
+				<!-- <div class="pdfdetail">
 			<a class="pdf1" href="public/pdf1.pdf download">
 			<img class="pdf" src="public/pdf2.png" alt=""></a>
 			<a class="pdf2" href="public/pdf2.pdf download">
 			<img class="pdf" src="public/pdf2.png" alt=""></a>
 		  </div> -->
+			</div>
 		</div>
-		</div>
-	  </section>
-  
-  
-	  <section class="fourth">
-		<div class="fourth" >
-		  <!-- <h1 class="details">Details about the weekly meal schedule</h1> -->
-		  <div class="alldetail">
-			<img class="detailimg" src="public/detail4.webp" alt="" />
-		  <img class="detailimg" src="public/detail5.jpeg" alt="" />
-		  <img class="detailimg" src="public/detail6.jpeg" alt="" />
-		  <!-- <div class="pdfdetail">
+	</section>
+
+
+	<section class="fourth">
+		<div class="fourth">
+			<!-- <h1 class="details">Details about the weekly meal schedule</h1> -->
+			<div class="alldetail">
+				<img class="detailimg" src="public/detail4.webp" alt="" />
+				<img class="detailimg" src="public/detail5.jpeg" alt="" />
+				<img class="detailimg" src="public/detail6.jpeg" alt="" />
+				<!-- <div class="pdfdetail">
 			<a class="pdf1" href="public/pdf1.pdf download">
 			<img class="pdf" src="public/pdf2.png" alt=""></a>
 			<a class="pdf2" href="public/pdf2.pdf download">
 			<img class="pdf" src="public/pdf2.png" alt=""></a>
 		  </div> -->
-		  
+
+			</div>
+			<div class="endofit">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis tempore debitis, ex
+				nobis aperiam tenetur doloribus magnam laudantium officia, odit iusto sint facilis!</div>
 		</div>
-		<div class="endofit">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis tempore debitis, ex nobis aperiam tenetur doloribus magnam laudantium officia, odit iusto sint facilis!</div>
-		</div>
-	  </section>
-  
-	  <!-- ************************************ END of Section 4 *********************************** -->
-  
-  
-  
-	  <!-- ****************************** Section 5 ***************************** -->
-  
-	  <section class="five">
-  
+	</section>
+
+	<!-- ************************************ END of Section 4 *********************************** -->
+
+
+
+	<!-- ****************************** Section 5 ***************************** -->
+
+	<section class="five">
+
 		<div class="docheading">
 			<From class="experts">Know More From Our experts</p>
 		</div>
-	  <div class="alldocvideos">
-		<div class="twodocvideos">
-			<div class="singledocvideo"><video src="public/video1.mp4" controls="controls"></video><p class="video">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam hic id earum beatae quia quo totam aut quae, nisi dolorum!</p></div>
-			<div class="singledocvideo"><video src="public/video1.mp4" controls="controls"></video><p class="video">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus cumque totam, ratione voluptatibus accusamus odio sapiente</p></div>
-			<div class="singledocvideo"><video src="public/video1.mp4" controls="controls"></video><p class="video">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus cumque totam, ratione voluptatibus accusamus odio sapiente</p></div>
+		<div class="alldocvideos">
+			<div class="twodocvideos">
+				<div class="singledocvideo"><video src="public/video1.mp4" controls="controls"></video>
+					<p class="video">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam hic id earum beatae
+						quia quo totam aut quae, nisi dolorum!</p>
+				</div>
+				<div class="singledocvideo"><video src="public/video1.mp4" controls="controls"></video>
+					<p class="video">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus cumque totam,
+						ratione voluptatibus accusamus odio sapiente</p>
+				</div>
+				<div class="singledocvideo"><video src="public/video1.mp4" controls="controls"></video>
+					<p class="video">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus cumque totam,
+						ratione voluptatibus accusamus odio sapiente</p>
+				</div>
+			</div>
+			<div class="twodocvideos">
+				<div class="singledocvideo"><video src="public/video1.mp4" controls="controls"></video>
+					<p class="video">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam magni alias
+						maiores nesciunt minima consequuntur cum r</p>
+				</div>
+				<div class="singledocvideo"><video src="public/video1.mp4" controls="controls"></video>
+					<p class="video">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto optio odio
+						repudiandae rem. Eaque dicta sint beatae n</p>
+				</div>
+				<div class="singledocvideo"><video src="public/video1.mp4" controls="controls"></video>
+					<p class="video">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto optio odio
+						repudiandae rem. Eaque dicta sint beatae n</p>
+				</div>
+			</div>
 		</div>
-		<div class="twodocvideos">
-			<div class="singledocvideo"><video src="public/video1.mp4" controls="controls"></video><p class="video">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam magni alias maiores nesciunt minima consequuntur cum r</p></div>
-			<div class="singledocvideo"><video src="public/video1.mp4" controls="controls"></video><p class="video">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto optio odio repudiandae rem. Eaque dicta sint beatae n</p></div>
-			<div class="singledocvideo"><video src="public/video1.mp4" controls="controls"></video><p class="video">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto optio odio repudiandae rem. Eaque dicta sint beatae n</p></div>
-		</div>
-	  </div>
-  
-	  </section>
-  
-  
-	  <!-- **************************** END of Section 5 ************************ -->
-  
-  
-	  <!-- ***************************** Section 6 ******************************* -->
-  
-	  <section class="sixth">
-  
+
+	</section>
+
+
+	<!-- **************************** END of Section 5 ************************ -->
+
+
+	<!-- ***************************** Section 6 ******************************* -->
+
+	<section class="sixth">
+
 		<h1 class="table">
-		  Download important Pdf related to the mid-day meal scheme
+			Download important Pdf related to the &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mid-Day-Meal scheme
 		</h1>
 		<table class="sixth">
-  
-  
-		  <tr>
-			  <th>PDF Name</th>
-			  <th>Download</th>
-		  </tr>
-		  <tr>
-			  <td>Document 1</td>
-			  <td><a class="download-link" href="path_to_document_1.pdf" download><span class="download-symbol">&#x2B07;</span></a></td>
-		  </tr>
-		  <tr>
-			  <td>Document 2</td>
-			  <td><a class="download-link" href="path_to_document_2.pdf" download><span class="download-symbol">&#x2B07;</span></a></td>
-		  </tr>
-		  <tr>
-			  <td>Document 3</td>
-			  <td><a class="download-link" href="path_to_document_3.pdf" download><span class="download-symbol">&#x2B07;</span></a></td>
-		  </tr>
-		  <tr>
-			  <td>Document 4</td>
-			  <td><a class="download-link" href="path_to_document_4.pdf" download><span class="download-symbol">&#x2B07;</span></a></td>
-		  </tr>
-		  <tr>
-			  <td>Document 5</td>
-			  <td><a class="download-link" href="path_to_document_5.pdf" download><span class="download-symbol">&#x2B07;</span></a></td>
-		  </tr>
-		  <tr>
-			  <td>Document 6</td>
-			  <td><a class="download-link" href="path_to_document_6.pdf" download><span class="download-symbol">&#x2B07;</span></a></td>
-		  </tr>
-	  </table>
-	  </section>
-  
-	  <!-- **************************** END of Section 6 ************************** -->
-	  <!-- Footer Section -->
-	  <footer>
+
+
+			<tr>
+				<th>PDF Name</th>
+				<th>Download</th>
+			</tr>
+			<tr>
+				<td>Document 1</td>
+				<td><a class="download-link" href="path_to_document_1.pdf" download><span
+							class="download-symbol">&#x2B07;</span></a></td>
+			</tr>
+			<tr>
+				<td>Document 2</td>
+				<td><a class="download-link" href="path_to_document_2.pdf" download><span
+							class="download-symbol">&#x2B07;</span></a></td>
+			</tr>
+			<tr>
+				<td>Document 3</td>
+				<td><a class="download-link" href="path_to_document_3.pdf" download><span
+							class="download-symbol">&#x2B07;</span></a></td>
+			</tr>
+			<tr>
+				<td>Document 4</td>
+				<td><a class="download-link" href="path_to_document_4.pdf" download><span
+							class="download-symbol">&#x2B07;</span></a></td>
+			</tr>
+			<tr>
+				<td>Document 5</td>
+				<td><a class="download-link" href="path_to_document_5.pdf" download><span
+							class="download-symbol">&#x2B07;</span></a></td>
+			</tr>
+			<tr>
+				<td>Document 6</td>
+				<td><a class="download-link" href="path_to_document_6.pdf" download><span
+							class="download-symbol">&#x2B07;</span></a></td>
+			</tr>
+		</table>
+	</section>
+
+	<!-- **************************** END of Section 6 ************************** -->
+	<!-- Footer Section -->
+	<footer>
 		<div class="container">
-		  <p>&copy; made by team Code-Crafters</p>
+			<p>&copy; made by team Code-Crafters</p>
 		</div>
-	  </footer>
+	</footer>
 
 	<script src="https://cdn.jsdelivr.net/npm/web3@1.5.3/dist/web3.min.js"></script>
 	<script>
